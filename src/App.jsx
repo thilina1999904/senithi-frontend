@@ -1,12 +1,18 @@
 import './App.css'
-import { LayoutDashboard, ShoppingCart, Package, Star, Users } from 'lucide-react';
-import AdminPage from './components/adminPage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AdminPage from './pages/admin/adminPage';
+import HomePage from './pages/home/homePage';
 
 function App() {
   return (
-    <div>
-      <AdminPage/>
-    </div>
+    <BrowserRouter>
+
+      <Routes>
+        <Route path="/admin/*" element={<AdminPage />} />
+        <Route path="/*" element={<HomePage />} />
+      </Routes>
+
+    </BrowserRouter>
   )
 }
 
